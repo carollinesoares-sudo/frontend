@@ -45,7 +45,7 @@ let pessoa2 = new Pessoa("Maria", 30, "987.654.321-00");
 pessoa1.exibirInfo();
 pessoa2.exibirInfo();
 
-// ✅ CORREÇÃO AQUI
+// 
 pessoa1.setIdade(26);
 pessoa1.exibirInfo();
 
