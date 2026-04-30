@@ -1,143 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
+:root {
+    --vinho-primario: #4a0404;
+    --vinho-botao: #800020;
+    --fundo-neve: #fcfafb;
+    --sombra-suave: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #fcfafb;
+    background-color: var(--fundo-neve);
+    color: #2d3436;
     margin: 0;
     padding: 20px;
+    /* Reduzi um pouco para telas menores */
 }
 
-
 h1 {
-    color: #4a0404;  
+    color: var(--vinho-primario);
     text-align: center;
-    font-size: 2.5rem;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    /* Fonte diminui conforme a tela */
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
 }
 
 h2 {
-    color: #4a0404;
     text-align: center;
-    font-size: 1.5rem;
-    margin-top: 50px;
-    margin-bottom: 20px;
     font-weight: 400;
+    color: #636e72;
     font-variant: small-caps;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
-
+/* --- FORMULÁRIO RESPONSIVO --- */
 .form-container {
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 850px;
-    margin: 0 auto 30px;
+    border-radius: 25px;
+    /* Deixei menos 'pílula' em telas cheias para virar bloco no mobile */
+    box-shadow: var(--sombra-suave);
+    max-width: 900px;
+    margin: 0 auto 40px;
     display: flex;
     gap: 10px;
-    justify-content: center;
     flex-wrap: wrap;
+    /* Faz os campos pularem de linha no celular */
+    justify-content: center;
 }
 
-input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+.form-container input {
+    border: none;
+    background: #f1f2f6;
+    padding: 12px 20px;
+    border-radius: 15px;
     outline: none;
+    font-weight: 600;
+    flex: 1 1 180px;
+    /* Permite que o input cresça, mas comece com 180px */
+    min-width: 140px;
 }
 
 #addBtn {
-    background-color: #800020;
-    
+    background: var(--vinho-botao);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 30px;
+    border-radius: 15px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
+    transition: 0.3s;
+    flex: 1 1 100%;
+    /* Botão ocupa a largura toda no celular quando quebrar */
+    max-width: 300px;
 }
 
-
-#stockList,
-#historyList {
-    padding: 0;
-    list-style: none;
-    max-width: 850px;
+/* --- GRID DE PRODUTOS RESPONSIVO --- */
+#stockList {
+    display: grid;
+    /* O auto-fit garante que os cards se ajustem sozinhos */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0;
 }
 
-
-#stockList li,
-#historyList li {
+#stockList li {
     background: white;
-    margin-bottom: 15px;
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-left: 8px solid #800020 !important;
-    
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.product-info,
-.log-info {
+    border-radius: 20px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--sombra-suave);
+    border-bottom: 5px solid var(--vinho-botao);
+    transition: 0.3s;
 }
 
+/* --- AJUSTES PARA CELULAR (MEDIA QUERIES) --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        border-radius: 20px;
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .form-container input {
+        flex: 1 1 100%;
+        /* No celular bem pequeno, cada input vira uma linha */
+    }
+
+    #addBtn {
+        max-width: 100%;
+        margin-top: 5px;
+    }
+
+    #stockList {
+        grid-template-columns: 1fr;
+        /* Um card por linha no celular */
+    }
+
+    #historyList li {
+        flex-direction: column;
+        /* Histórico empilha no celular */
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* --- RESTANTE DOS ESTILOS --- */
+.product-info strong {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: block;
+}
 
 .category-badge {
-    background: #f5f5f5;
-   
-    color: #4a0404;
-    
-    padding: 4px 10px;
-    border-radius: 20px;
+    background: #fdf2f2;
+    color: var(--vinho-botao);
+    padding: 4px 15px;
+    border-radius: 10px;
     font-size: 0.7rem;
-    font-weight: bold;
-    width: fit-content;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .product-data {
+    margin-top: 15px;
     display: flex;
-    align-items: center;
-    gap: 15px;
-    font-weight: bold;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
-
 
 .btn-venda {
-    background: #800020;
-    
+    background: var(--vinho-botao);
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
     cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-venda:hover {
-    background: #4a0404;
 }
 
 .btn-apagar {
-    background: transparent;
-    color: #800020;
-    border: 1px solid #800020;
-    padding: 8px 12px;
-    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #dfe6e9;
     cursor: pointer;
+    font-weight: 800;
 }
 
-#historyList li.venda {
-    border-left-color: #800020 !important;
+#historyList {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0;
+}
+
+#historyList li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--vinho-botao);
+    box-shadow: var(--sombra-suave);
 }
