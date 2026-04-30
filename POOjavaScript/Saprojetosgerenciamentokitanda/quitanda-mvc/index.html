@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quitanda</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Quitanda</h1>
+    
+    <div class="form-container">
+        <input id="name" placeholder="Nome do Produto">
+        <input id="category" placeholder="Categoria">
+        <input id="price" type="number" placeholder="Preço (R$)">
+        <input id="quantity" type="number" placeholder="Qtd">
+        <button id="addBtn">Cadastrar</button>
+    </div>
+
+    <div class="main-content">
+        <h2>Estoque Atual</h2>
+        <ul id="stockList"></ul>
+
+        <hr>
+        <h2>Histórico de Movimentações</h2>
+        <ul id="historyList"></ul>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

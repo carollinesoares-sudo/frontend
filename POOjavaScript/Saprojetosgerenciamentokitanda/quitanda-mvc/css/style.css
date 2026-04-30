@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fcfafb;
+    margin: 0;
+    padding: 20px;
+}
+
+
+h1 {
+    color: #4a0404;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #4a0404;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-variant: small-caps;
+}
+
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+#addBtn {
+    background-color: #800020;
+    
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+#stockList,
+#historyList {
+    padding: 0;
+    list-style: none;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+
+#stockList li,
+#historyList li {
+    background: white;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 8px solid #800020 !important;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.product-info,
+.log-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.category-badge {
+    background: #f5f5f5;
+   
+    color: #4a0404;
+    
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.product-data {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+
+.btn-venda {
+    background: #800020;
+    
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-venda:hover {
+    background: #4a0404;
+}
+
+.btn-apagar {
+    background: transparent;
+    color: #800020;
+    border: 1px solid #800020;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#historyList li.venda {
+    border-left-color: #800020 !important;
+}

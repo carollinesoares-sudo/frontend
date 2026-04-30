@@ -6,7 +6,7 @@ Documento baseado na ISO/IEEE 29148:2018
 **Padrão:** ISO/IEC/IEEE 29148:2018
 **Versão:** 1.0.0
 **Data:** 2026-04-14
-**Autor:** DiogoTB
+**Autor:** ccarolmaias
 
 ---
 
