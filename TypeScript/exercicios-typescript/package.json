@@ -1,0 +1,13 @@
+{
+  "name": "exercicios-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio1.js",
+  "scripts": {
+    "test1": "tsc exercicio1.ts --ignoreConfig && node exercicio1.js",
+    "test2": "tsc exercicio2.ts --ignoreConfig && node exercicio2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
