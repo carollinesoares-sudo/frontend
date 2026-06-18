@@ -1,0 +1,23 @@
+<div *ngIf="curriculo">
+
+  <h2>{{ curriculo.nomeCompleto }}</h2>
+
+  <p><strong>E-mail:</strong> {{ curriculo.email }}</p>
+  <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+
+  <p>
+    <strong>Experiência:</strong>
+    {{ curriculo.experiencia }}
+  </p>
+
+  <p>
+    <strong>Formação:</strong>
+    {{ curriculo.formacao }}
+  </p>
+
+  <p>
+    <strong>Habilidades:</strong>
+    {{ curriculo.habilidades.join(', ') }}
+  </p>
+
+</div>

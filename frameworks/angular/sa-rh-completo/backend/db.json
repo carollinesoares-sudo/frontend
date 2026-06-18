@@ -1,0 +1,36 @@
+{
+  "vagas": [
+    {
+      "id": "1",
+      "nome": "Desenvolver FrontEnd Jr",
+      "foto": "foto1.jpg",
+      "descricao": "Trabalhar com HTML, CSS e JS",
+      "salario": 4500
+    },
+    {
+      "id": "2",
+      "nome": "Desenvolver BackEnd Pleno",
+      "foto": "foto2.jpg",
+      "descricao": "Trabalhar com Desenvolvimento Web",
+      "salario": 9700
+    },
+    {
+      "id": "3",
+      "nome": "Desenvolver Fullstack Senior",
+      "foto": "foto3.jpg",
+      "descricao": "Trabalhar com Desenvolvimento Web",
+      "salario": 33000
+    }
+  ],
+  "curriculos": [
+    {
+      "nomeCompleto": "Carolline",
+      "email": "carolline@gmail.com",
+      "telefone": "19 993268522",
+      "formacao": "Nenhuma",
+      "experiencia": "Nenhuma",
+      "habilidades": [],
+      "id": "dCOAEMyRfsU"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+// Variáveis de Cores do Sistema
+// Use CSS custom properties from src/styles.scss
+
+h2 {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+// Estilização do link de Novo Currículo (estilo botão flutuante)
+a[routerLink] {
+  display: inline-block;
+  font-family: sans-serif;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: var(--primary-dark);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Estrutura e Design da Tabela
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden; // Garante que as bordas arredondadas funcionem na tabela
+
+  thead {
+    background-color: #f3f4f6;
+
+    tr {
+      th {
+        color: $secondary-color;
+        text-align: left;
+        padding: 1rem 1.5rem;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 2px solid $border-color;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-color;
+      transition: background-color 0.15s ease;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: rgba(79,70,229,0.03); // Efeito hover discreto (cor primária)
+      }
+
+      td {
+        padding: 1rem 1.5rem;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        vertical-align: middle;
+
+        // Coluna de ações (botões)
+        &:last-child {
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+// Botões de Ação na Tabela
+button {
+  font-family: sans-serif;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  // Botão Editar
+  &[routerLink],
+  &:first-of-type {
+    background-color: white;
+    color: var(--primary);
+    border-color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+  }
+
+  // Botão Excluir
+  &:last-of-type {
+    background-color: white;
+    color: var(--danger);
+    border-color: var(--danger);
+
+    &:hover {
+      background-color: var(--danger);
+      color: white;
+    }
+  }
+}
+
+.curriculo-list {
+  display: grid;
+  gap: 12px;
+}
+
+.curriculo-item {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.curriculo-item .meta { flex: 1; }

@@ -1,0 +1,129 @@
+//estilização de painel vagas
+// usar variáveis CSS definidas em src/styles.scss
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+}
+
+form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1rem;
+  }
+
+  input {
+    width: calc(100% - 40px);
+    padding: 1rem 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    &:focus {
+      // quando clicar no input
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  button {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 1rem;
+
+    &[type='button']:nth-of-type(1) {
+      background-color: var(--secondary);
+      &:hover {
+        background-color: var(--success-dark);
+      }
+    }
+    &[type='button']:nth-of-type(2) {
+      background-color: var(--secondary);
+      &:hover {
+        background-color: var(--accent);
+      }
+    }
+
+    &[type='button']:nth-of-type(3) {
+      background-color: var(--secondary);
+      &:hover {
+        background-color: var(--danger-dark);
+      }
+    }
+  }
+}
+
+// estilização da tabela
+
+//estilização da tabela
+section{
+  max-width: 1300px;
+  margin: 10px auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow-x: auto;
+
+  .table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+
+    th{
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #aaa;
+      vertical-align: middle;
+      color: #555;
+    }
+
+    thead{
+      background-color: #999;
+      th{
+        color: #222;
+        font-weight: bold;
+      }
+    }
+
+    tbody{
+      tr{
+        &:hover{
+          background-color: #f3f4f6;
+        }
+      }
+      button{
+        border: none;
+        background-color: var(--secondary);
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover{
+          background-color: var(--accent);
+        }
+      }
+    }
+  }
+}//fim da tabela
+
+.footer{
+  height: 8vh;
+}

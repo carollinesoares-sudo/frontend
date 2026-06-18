@@ -1,0 +1,43 @@
+<h2>{{ editando ? 'Editar Currículo' : 'Novo Currículo' }}</h2>
+
+<form *ngIf="curriculo" (ngSubmit)="salvar()">
+
+  <label>Nome Completo</label>
+  <input
+    type="text"
+    [(ngModel)]="curriculo.nomeCompleto"
+    name="nomeCompleto"
+    required>
+
+  <label>E-mail</label>
+  <input
+    type="email"
+    [(ngModel)]="curriculo.email"
+    name="email"
+    required>
+
+  <label>Telefone</label>
+  <input
+    type="text"
+    [(ngModel)]="curriculo.telefone"
+    name="telefone"
+    required>
+
+  <label>Formação</label>
+  <textarea
+    [(ngModel)]="curriculo.formacao"
+    name="formacao"
+    required>
+  </textarea>
+
+  <label>Experiência</label>
+  <textarea
+    [(ngModel)]="curriculo.experiencia"
+    name="experiencia">
+  </textarea>
+
+  <button type="submit">
+    {{ editando ? 'Atualizar' : 'Cadastrar' }}
+  </button>
+
+</form>
